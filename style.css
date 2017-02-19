@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+* {
+	font-size: 20px;	
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+:root {
+	--main-color: 155, 89, 182;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	width: 33%;
+	margin: 0 auto;
+	transition: all .3s ease-in-out;
+}
+
+.form input {
+	box-sizing: border-box;
+	border: 3px solid rgb(var(--main-color));
+	padding: 10px 20px;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 1.4em;
+	margin-top: 10px;
+}
+
+.form input:focus {
+	outline: none;
+}
+
+#calc {
+	background: none;
+	cursor: pointer;
+	box-shadow: inset 0 -3px 0 rgb(var(--main-color));
+	transition: all .2s ease-in-out, box-shadow .1s ease-in;
+}
+
+#calc:hover {
+	background: rgba(var(--main-color), .5);
+	color: #fff;
+}
+
+#calc:active {
+	background: rgba(var(--main-color), .7);
+	box-shadow: inset 0 0 rgb(var(--main-color));
+}
+
+.result {
+	width: 95%;
+	display: flex;
+	justify-content: space-around;
+	margin: 20px auto;
+	transition: all .2s ease-in-out;
+}
+
+.result__box {
+	box-sizing: border-box;
+	border: 2px solid rgb(var(--main-color));
+	border-radius: 3px;
+	width: 15%;
+	transform: perspective(400px);
+}
+
+.result__letter {
+	font-size: 2rem;
+	text-align: center;
+	padding: 5px;
+}
+
+.result__count {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.result__anim {
+	animation: shakeIn 0.55s ease-in-out;
+}
+
+@keyframes shakeIn {
+	0% {
+		transform: perspective(800px) translateZ(0);
+		opacity: 0;
+	}
+	35% {
+		transform: perspective(800px) translateZ(-100px);
+		opacity: 1;
+	}
+	70% {
+		transform: perspective(800px) translateZ(50px);
+	}
+	100% {
+		transform: perspective(800px) translateZ(0);
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	
+	* {
+		font-size: 18px;
+	}
+
+	.form {
+		width: 50%;
+	}
+
+	.result {
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+
+	.result__box {
+		width: 30%;
+		margin-bottom: 10px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+
+	* {
+		font-size: 16px;
+	}
+
+	.form {
+		width: 70%;
+	} 
+
+	.result {
+		justify-content: space-around;
+	}
+
+	.result__box {
+		width: 47%;
+	}
+
+}
+
+@media screen and (max-width: 400px) {
+
+	* {
+		font-size: 15px;
+	}
+
+	.form {
+		width: 95%;
+	}
+
+	.result__box {
+		width: 100%;
+	}
+
+}
